@@ -1,6 +1,8 @@
 /* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Remove margins and padding from the list */
@@ -71,7 +73,8 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-  background-color: #f44336;
+  background: rgb(88,88,88);
+  background: linear-gradient(0deg, rgba(88,88,88,1) 0%, rgba(137,137,138,1) 100%);
   padding: 30px 40px;
   color: white;
   text-align: center;
@@ -88,7 +91,8 @@ ul li.checked::before {
 input {
   margin: 0;
   border: none;
-  border-radius: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   width: 75%;
   padding: 10px;
   float: left;
