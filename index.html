@@ -7,14 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="myDIV" class="header">
-    <h2>Lista de tarefas</h2>
-    <input type="text" id="myInput" placeholder="Tarefa...">
-    <span onclick="newElement()" class="addBtn">Add</span>
+  <div class="corpo">
+    <div class="container">
+      <div id="myDIV" class="header">
+        <h2>Lista de tarefas</h2>
+        <input type="text" id="myInput" placeholder="Tarefa...">
+        <span id="myBtn" onclick="newElement()" class="addBtn">Add</span>
+      </div>
+      
+      <ul id="myUL">
+      </ul>
+    </div>
   </div>
-  
-  <ul id="myUL">
-  </ul>
 
   <script src="script.js"></script>
 </body>
