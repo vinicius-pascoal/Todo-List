@@ -1,5 +1,6 @@
 // TODO adicionar alguma forma de salva as tarefas 
 
+//faz o enter adicionar elementos a lista
 var input = document.getElementById("myInput");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -8,7 +9,7 @@ input.addEventListener("keypress", function(event) {
   }
 });
 
-// Create a "close" button and append it to each list item
+// adiciona o botao de fechar em todos os elementos da lista
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -19,7 +20,7 @@ for (i = 0; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
+// funcionalidade do botao de fechar
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
@@ -29,7 +30,7 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-// Add a "checked" symbol when clicking on a list item
+// adiciona o checkmark quando o item e marcado como comcluido
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
@@ -37,7 +38,7 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
-// Create a new list item when clicking on the "Add" button
+// adiciona elementos a lista 
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
