@@ -1,4 +1,4 @@
-// TODO adicionar alguma forma de salva as tarefas 
+// TODO adicionar salvamento de tarefas com localStorage
 
 //faz o enter adicionar elementos a lista
 var input = document.getElementById("myInput");
