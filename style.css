@@ -157,6 +157,10 @@ input {
     display: none;
   }
 
+  .container{
+    border-radius: 0;
+  }
+
   .corpo {
     padding: 0;
   }
