@@ -41,7 +41,9 @@ ul li {
   font-size: 18px;
   transition: 0.2s;
   border-radius: 16px;
-
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: scroll;
 }
 
 ul li:nth-child(odd) {
