@@ -43,7 +43,7 @@ ul li {
   border-radius: 16px;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 ul li:nth-child(odd) {
