@@ -1,7 +1,21 @@
 // TODO adicionar salvamento de tarefas com localStorage
 
+//get tarefas 
+function getTarefas() {
+  var tarefasArmazenadas = JSON.parse(localStorage.getItem("tarefas"))
+  return tarefasArmazenadas
+}
+//add tarefas
+function addTarefas(tarefaNova) {
+  var tarefasArmazenadas = getTarefas()
+  tarefasArmazenadas.push(tarefaNova)
+  localStorage.setItem("tarefas", JSON.stringify(tarefasArmazenadas));
+}
+
+//remove tarefaz
+
 //coletar lista do localStorage
-var tarefasArmazenadas = JSON.parse(localStorage.getItem("tarefas"))
+var tarefasArmazenadas = getTarefas()
 console.log(tarefasArmazenadas)
 for (let i = 0; i < tarefasArmazenadas.length; i++) {
   var li = document.createElement("li");
@@ -93,4 +107,5 @@ function newElement() {
       div.style.display = "none";
     }
   }
+  addTarefas(inputValue)
 }
