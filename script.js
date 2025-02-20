@@ -1,5 +1,11 @@
 // TODO o remove precisa receber um refresh para reconhecer a tarefa
 
+
+if (!localStorage) {
+  var tarefas = []
+  localStorage.setItem("tarefas" , JSON.stringify(tarefas))
+} 
+
 //get tarefas 
 function getTarefas() {
   var tarefasArmazenadas = JSON.parse(localStorage.getItem("tarefas"))
