@@ -5,6 +5,7 @@ function getTarefas() {
   var tarefasArmazenadas = JSON.parse(localStorage.getItem("tarefas"))
   return tarefasArmazenadas
 }
+
 //add tarefas
 function addTarefas(tarefaNova) {
   var tarefasArmazenadas = getTarefas()
@@ -12,7 +13,19 @@ function addTarefas(tarefaNova) {
   localStorage.setItem("tarefas", JSON.stringify(tarefasArmazenadas));
 }
 
-//remove tarefaz
+//remove tarefas
+function removeTarefa(tarefaRemove) {
+  var tarefasArmazenadas = getTarefas(); // Obtém do Local Storage
+
+  let posicao = tarefasArmazenadas.indexOf(tarefaRemove);
+
+  if (posicao !== -1) { // Verifica se o item existe
+      tarefasArmazenadas.splice(posicao, 1);
+      localStorage.setItem("tarefas", JSON.stringify(tarefasArmazenadas));
+  } else {
+      console.warn("Tarefa não encontrada no Local Storage:", tarefaRemove);
+  }
+}
 
 //coletar lista do localStorage
 var tarefasArmazenadas = getTarefas()
@@ -36,14 +49,6 @@ for (let i = 0; i < tarefasArmazenadas.length; i++) {
 
 }
 
-//testes
-var names = [];
-names[0] = prompt("New member name?");
-localStorage.setItem("names", JSON.stringify(names));
-
-var storedNames = JSON.parse(localStorage.getItem("names"));
-console.log(storedNames[0])
-
 //faz o enter adicionar elementos a lista
 var input = document.getElementById("myInput");
 input.addEventListener("keypress", function(event) {
@@ -66,12 +71,17 @@ for (i = 0; i < myNodelist.length; i++) {
 
 // funcionalidade do botao de fechar
 var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+
+for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+        let li = this.parentElement; // Captura o <li>
+        let texto = li.childNodes[0].textContent.trim(); // Captura o texto
+
+        console.log("Removendo:", texto); // Debug
+
+        removeTarefa(texto); // Remove do Local Storage
+        li.remove(); // Remove do DOM
+    };
 }
 
 // adiciona o checkmark quando o item e marcado como comcluido
