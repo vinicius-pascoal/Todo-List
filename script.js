@@ -1,7 +1,7 @@
 // TODO o remove precisa receber um refresh para reconhecer a tarefa
 
 
-if (localStorage = null) {
+if (!localStorage.getItem("tarefas")) {
   var tarefas = []
   localStorage.setItem("tarefas" , JSON.stringify(tarefas))
 } 
