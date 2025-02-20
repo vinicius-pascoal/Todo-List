@@ -1,4 +1,4 @@
-// TODO adicionar salvamento de tarefas com localStorage
+// TODO o remove precisa receber um refresh para reconhecer a tarefa
 
 //get tarefas 
 function getTarefas() {
