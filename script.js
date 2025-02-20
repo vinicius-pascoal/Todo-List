@@ -1,5 +1,35 @@
 // TODO adicionar salvamento de tarefas com localStorage
 
+//coletar lista do localStorage
+var tarefasArmazenadas = JSON.parse(localStorage.getItem("tarefas"))
+console.log(tarefasArmazenadas)
+for (let i = 0; i < tarefasArmazenadas.length; i++) {
+  var li = document.createElement("li");
+  var inputValue = tarefasArmazenadas[i];
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+}
+
+//testes
+var names = [];
+names[0] = prompt("New member name?");
+localStorage.setItem("names", JSON.stringify(names));
+
+var storedNames = JSON.parse(localStorage.getItem("names"));
+console.log(storedNames[0])
+
 //faz o enter adicionar elementos a lista
 var input = document.getElementById("myInput");
 input.addEventListener("keypress", function(event) {
