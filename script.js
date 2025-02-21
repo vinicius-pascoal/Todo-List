@@ -1,6 +1,7 @@
 // TODO o remove precisa receber um refresh para reconhecer a tarefa
 
 
+
 if (!localStorage.getItem("tarefas")) {
   var tarefas = []
   localStorage.setItem("tarefas" , JSON.stringify(tarefas))
@@ -108,6 +109,7 @@ function newElement() {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
+    addTarefas(inputValue)
   }
   document.getElementById("myInput").value = "";
 
@@ -123,5 +125,5 @@ function newElement() {
       div.style.display = "none";
     }
   }
-  addTarefas(inputValue)
+  
 }

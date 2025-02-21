@@ -97,6 +97,10 @@ ul li.checked::before {
   clear: both;
 }
 
+.header h2 {
+  font-weight: bold;
+}
+
 input {
   margin: 0;
   border: none;
@@ -114,7 +118,9 @@ input {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background: rgb(92,92,92);
-  background: linear-gradient(90deg, rgba(92,92,92,1) 0%, rgba(150,150,150,1) 100%); 
+  background: linear-gradient(90deg, rgb(175, 175, 175) 0%, rgba(150,150,150,1) 100%); 
+  border: none;
+  min-width: fit-content;
   color: #ffffff;
   float: left;
   text-align: center;
@@ -150,7 +156,7 @@ input {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 847px) {
   input{
     float: none;
     border-top-right-radius: 20px;
